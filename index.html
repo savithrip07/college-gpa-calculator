@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GradeCalc — M.O.P. Vaishnav College</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <span class="brand-icon">◈</span>
+        <div>
+          <span class="brand-text">GradeCalc</span>
+          <span class="brand-sub">M.O.P. Vaishnav College for Women</span>
+        </div>
+      </div>
+      <div class="header-tagline">Your Academic Performance, <span class="accent">Calculated.</span></div>
+    </div>
+  </header>
+
+  <main class="main-wrap">
+
+    <!-- ══════════════════════════════════════
+         SECTION 1 — GPA CALCULATOR
+    ══════════════════════════════════════ -->
+    <section class="section-card" id="gpa-section">
+      <div class="section-title-row">
+        <div>
+          <h2>📊 GPA Calculator</h2>
+          <p class="section-sub">Select a semester — subject rows will appear automatically.</p>
+        </div>
+      </div>
+
+      <!-- Semester selector -->
+      <div class="sem-selector-row">
+        <label for="gpa-semester">Select Semester</label>
+        <div class="sem-select-wrap">
+          <select id="gpa-semester">
+            <option value="">— Choose Semester —</option>
+            <option value="1">Semester 1</option>
+            <option value="2">Semester 2</option>
+            <option value="3">Semester 3</option>
+            <option value="4">Semester 4</option>
+            <option value="5">Semester 5</option>
+            <option value="6">Semester 6</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Subject table header -->
+      <div class="subject-header" id="subject-header" style="display:none">
+        <span>Subject Name</span>
+        <span>Marks (0–100)</span>
+        <span>Credits <span class="credits-hint">(available in your syllabus of each paper)</span></span>
+        <span>Grade Point</span>
+      </div>
+
+      <!-- Subject rows -->
+      <div id="gpa-subjects"></div>
+
+      <!-- Error -->
+      <div id="gpa-error" class="error-msg hidden"></div>
+
+      <!-- Actions -->
+      <div class="action-row">
+        <button class="btn btn-primary" onclick="calculateGPA()">Calculate GPA</button>
+      </div>
+
+      <!-- GPA Result -->
+      <div id="gpa-result" class="result-banner hidden">
+        <div class="result-left">
+          <span class="result-lbl">Semester GPA</span>
+          <span class="result-score" id="gpa-score">—</span>
+          <span class="result-perf" id="gpa-perf"></span>
+        </div>
+        <div class="result-stats" id="gpa-stats"></div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SECTION 2 — CGPA SUMMARY
+    ══════════════════════════════════════ -->
+    <section class="section-card" id="cgpa-section">
+      <div class="section-title-row">
+        <div>
+          <h2>🎓 CGPA Calculator</h2>
+          <p class="section-sub">Semester GPAs are added here automatically when you calculate. You can also enter them manually. <span class="saved-indicator" id="saved-indicator"></span></p>
+        </div>
+      </div>
+
+      <!-- 6 semester rows -->
+      <div class="cgpa-table-wrap">
+        <table class="cgpa-table" id="cgpa-table">
+          <thead>
+            <tr>
+              <th>Semester</th>
+              <th>GPA</th>
+              <th>Credits</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="cgpa-rows"></tbody>
+          <tfoot id="cgpa-foot"></tfoot>
+        </table>
+      </div>
+
+      <!-- CGPA error -->
+      <div id="cgpa-error" class="error-msg hidden"></div>
+
+
+
+      <!-- CGPA Result -->
+      <div id="cgpa-result" class="result-banner hidden">
+        <div class="result-left">
+          <span class="result-lbl">Overall CGPA</span>
+          <span class="result-score" id="cgpa-score">—</span>
+          <span class="result-perf" id="cgpa-perf"></span>
+        </div>
+        <div class="result-stats" id="cgpa-stats"></div>
+
+      </div>
+
+
+    </section>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <span>ℹ️</span>
+      <p><strong>Disclaimer:</strong> These are estimated results based on the marks and credits entered. Official results may vary depending on college evaluation and rounding policies.</p>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>GradeCalc · M.O.P. Vaishnav College for Women · All data stays in your browser</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

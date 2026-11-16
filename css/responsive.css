@@ -1,0 +1,57 @@
+/* ═══════════════════════════════════════════════════════
+   responsive.css
+═══════════════════════════════════════════════════════ */
+
+/* ── Tablet ── */
+@media (max-width: 768px) {
+  .header-tagline { display: none; }
+
+  .subject-header,
+  .subject-row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  .subject-header span:nth-child(1),
+  .subject-row > *:nth-child(1) { grid-column: 1 / -1; }
+
+  .result-banner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .result-right  { flex-direction: row; margin-left: 0; }
+
+  .cgpa-table th:nth-child(4),
+  .cgpa-table td:nth-child(4) { display: none; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 520px) {
+  .main-wrap { padding: 1.25rem 1rem; gap: 1.25rem; }
+  .section-card { padding: 1.25rem; }
+  .nav-inner { padding: .85rem 1rem; }
+  .brand-sub { display: none; }
+
+  .subject-header { display: none !important; }
+  .subject-row {
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    padding: .75rem;
+    margin-bottom: .5rem;
+    border: 1px solid var(--border);
+  }
+  .subject-row > *:nth-child(1) { grid-column: 1 / -1; }
+
+  .subject-row > *:nth-child(2)::before { content: 'Marks'; display: block; font-size: .7rem; font-weight: 700; color: var(--muted); margin-bottom: .2rem; }
+  .subject-row > *:nth-child(3)::before { content: 'Credits'; display: block; font-size: .7rem; font-weight: 700; color: var(--muted); margin-bottom: .2rem; }
+  .subject-row > *:nth-child(4)::before { content: 'Grade Point'; display: block; font-size: .7rem; font-weight: 700; color: var(--muted); margin-bottom: .2rem; }
+
+  .action-row { flex-direction: column; }
+  .action-row .btn { width: 100%; justify-content: center; }
+
+  .result-stats { gap: .5rem; }
+  .stat-chip { min-width: 70px; padding: .5rem .6rem; }
+
+  .cgpa-table th:nth-child(3),
+  .cgpa-table td:nth-child(3) { display: none; }
+
+  .result-score { font-size: 2.4rem; }
+}
